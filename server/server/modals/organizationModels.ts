@@ -1,23 +1,21 @@
 let Organization = require('../../data/organization');
 import { join } from "node:path";
 import fs from "node:fs"
-import {getPostData, objInterface} from "../utils"
+import {getPostData, objInterface, writeDataToFile} from "../utils"
 //const {writeDataToFile} = require('../utils')
 
+console.log(typeof Organization)
 export function findAll(){
     return new Promise((resolve, reject) => {
         resolve(Organization)
     })
 }
-
-
 export function findById(id:number): Promise<objInterface>{
     return new Promise((resolve, reject) => {
         const organization = Organization.find((p: objInterface) => p.id === id)
         resolve(organization) 
     })
 }
-
 
 export function create(data:objInterface){
     let id = Organization.length + 1
@@ -28,7 +26,6 @@ export function create(data:objInterface){
         flag: 'w',
        })
        resolve(newOrganization)
-
     })
 }
 export function update(id:number, organization:objInterface){
@@ -43,11 +40,8 @@ export function update(id:number, organization:objInterface){
 export function remove(id:number){
     return new Promise((resolve, reject) => {
         Organization = Organization.filter((p: objInterface) => p.id !== id)
-       fs.writeFileSync(join(__dirname, '../data/organization.json'),JSON.stringify(Organization))
+       fs.writeFileSync(join(__dirname, '../data/organization.json'), JSON.stringify(Organization))
        resolve(Organization)
 
     })
 }
-
-
-// export default findAll

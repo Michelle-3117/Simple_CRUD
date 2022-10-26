@@ -15,18 +15,13 @@ const server: Server = http.createServer((req: IncomingMessage, res: ServerRespo
         const $ = cheerio.load(response.data);
         const title = $('title').text()
         const desc = $("description").attr("content");
-        // const imageUrl = [];
-        // $('img').each((i, image) => {
-        //     let newImage = $(image).attr("content")
-        //     imageUrl.push(newImage)
-        // })
+       
 
         let finalOutput = {
             name: title,
             description: desc,
         }
         
-        //console.log(imageUrl);
         res.writeHead(200, {'Content-Type': 'text/HTML'})
         .end(JSON.stringify(finalOutput, null, 2))
         }

@@ -1,5 +1,5 @@
 import  { IncomingMessage, ServerResponse } from "http";
-import  {findAll, findById, create, update, remove}  from "../models/organizationModels";
+import  {findAll, findById, create, update, remove}  from "../modals/organizationModels";
 import {getPostData, objInterface} from "../utils"
 
 //import Organization from '../models/organizationModels';
@@ -14,6 +14,7 @@ async function getOrgans(req:IncomingMessage, res:ServerResponse){
         console.log(error)
     }
 }
+
 //get single ORGANIZATION
 export async function getOrgan(req:IncomingMessage, res:ServerResponse, id: number){
     try{
@@ -34,11 +35,12 @@ export async function getOrgan(req:IncomingMessage, res:ServerResponse, id: numb
 }
 
 //create organization (POST)
-export async function createOrganization(req:IncomingMessage, res:ServerResponse){
+export async function createOrganization(req:IncomingMessage, res:ServerResponse, data:objInterface){
     try{
-        const body: any = await getPostData(req)
+        // const body: any = await getPostData(req)
 
-        const {name, createdAt, updatedAt, products, marketValue, address, ceo, country, noOfEmployees, employees} = JSON.parse(body)
+
+        const {name, createdAt, updatedAt, products, marketValue, address, ceo, country, noOfEmployees, employees} = data;
 
         const organization = {
             name,
@@ -123,3 +125,8 @@ export async function deleteOrganization(req:IncomingMessage, res:ServerResponse
 // }
 
 export default getOrgans
+
+
+
+
+

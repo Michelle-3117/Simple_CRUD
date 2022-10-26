@@ -1,16 +1,7 @@
 import http, { IncomingMessage, Server, ServerResponse } from "http";
-import getOrgans from './controllers/organ-Control';
-import { getOrgan, createOrganization, updateOrganization, deleteOrganization} from "./controllers/organ-Control";
-/*
-implement your server code here
-*/
-// const server: Server = http.createServer((req: IncomingMessage, res: ServerResponse) => {
+import getOrgans from './controller/organ-Control';
+import { getOrgan, createOrganization, updateOrganization, deleteOrganization} from "./controller/organ-Control";
 
-//     if (req.method === "GET") {
-//       res.end(JSON.stringify({ name: "hello" }));
-//     }
-//   }
-// );
 
 const server: Server = http.createServer((req: IncomingMessage, res: ServerResponse) => {
   if(req.url === "/api/organization" && req.method === "GET"){
@@ -21,9 +12,13 @@ const server: Server = http.createServer((req: IncomingMessage, res: ServerRespo
       getOrgan(req, res, id)
   }
   else if(req.url === "/api/organization" && req.method === 'POST'){
-      createOrganization(req, res)
+      req.on('data', (data) =>{
+        data = JSON.parse(data.toString());
+        createOrganization(req, res, data)
+      })
+      
   }
-  else if(req.url?.match(/\/api\/organization\/([0-9]+)/) && req.method === 'PATCH'){
+  else if(req.url?.match(/\/api\/organization\/([0-9]+)/) && req.method === 'PUT'){
     const id:number = Number(req.url.split('/')[3])
     updateOrganization(req, res, id)
   }

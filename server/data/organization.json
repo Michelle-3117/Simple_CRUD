@@ -1,1 +1,67 @@
-{"id":1,"name":"node ninja","createdAt":"2020-08-12T19:04:55.455Z","updatedAt":"2020-08-12T19:04:55.455Z","products":["developers","pizza"],"marketValue":"90%","address":"nigeria","ceo":"cn","country":"Taiwan","noOfEmployees":2,"employees":["james bond","jackie chan"]}
+[
+  {
+    "id": 1,
+    "name": "node ninja",
+    "createdAt": "2020-08-12T19:04:55.455Z",
+    "updatedAt": "2020-08-12T19:04:55.455Z",
+    "products": ["developers", "pizza"],
+    "marketValue": "90%",
+    "address": "nigeria",
+    "ceo": "cn",
+    "country": "Taiwan",
+    "noOfEmployees": 2,
+    "employees": ["james bond", "jackie chan"]
+  },
+  {
+    "id": 2,
+    "name": "node ninja",
+    "createdAt": "2020-08-12T19:04:55.455Z",
+    "updatedAt": "2020-08-12T19:04:55.455Z",
+    "products": ["developers", "pizza"],
+    "marketValue": "90%",
+    "address": "nigeria",
+    "ceo": "cn",
+    "country": "Taiwan",
+    "noOfEmployees": 2,
+    "employees": ["james bond", "jackie chan"]
+  },
+  {
+    "id": 4,
+    "name": "Node Ninja",
+    "createdAt": "2020-08-12T19:04:55.455Z",
+    "updatedAt": "Just Now",
+    "products": ["Devs"],
+    "marketValue": "74%",
+    "address": "Edo",
+    "ceo": "CN",
+    "country": "Nigeria",
+    "noOfEmployees": 2,
+    "employees": ["Jackie Bond", "James Chan"]
+  },
+  {
+    "id": 4,
+    "name": "Node one",
+    "createdAt": "2020-08-12T19:04:55.455Z",
+    "updatedAt": "Just Now",
+    "products": ["Devs"],
+    "marketValue": "74%",
+    "address": "Edo",
+    "ceo": "CN",
+    "country": "Nigeria",
+    "noOfEmployees": 2,
+    "employees": ["Jackie Bond", "James Chan"]
+  },
+  {
+    "id": 5,
+    "name": "Node two",
+    "createdAt": "2020-08-12T19:04:55.455Z",
+    "updatedAt": "Just Now",
+    "products": ["Devs"],
+    "marketValue": "74%",
+    "address": "Edo",
+    "ceo": "CN",
+    "country": "Nigeria",
+    "noOfEmployees": 2,
+    "employees": ["Jackie Bond", "James Chan"]
+  }
+]
